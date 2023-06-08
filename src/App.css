@@ -1,0 +1,12 @@
+.ul-list {
+  margin: auto !important;
+}
+
+.in-view {
+  /* red font */
+  color: black;
+
+  background-color: #ffffff;
+  transition: 1s;
+  padding: 20px;
+}
