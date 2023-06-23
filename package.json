@@ -12,7 +12,7 @@
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "preinstall": "npx npm-force-resolutions",
-    "heroku-postbuild": "npm install"
+    "heroku-postbuild": "npm install --legacy-peer-deps"
   },
   "dependencies": {
     "@mui/material": "^5.13.6",
