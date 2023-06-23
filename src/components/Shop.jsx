@@ -29,24 +29,27 @@ const Shop = () => {
 
   return (
     <div className="p-10">
-      <div className="flex lg:float-right">
-        <select
-          onChange={(e) => setSelectedType(e.target.value)}
-          value={selectedType}
-          className="bg-neutral-900 text-gray-300 px-6 py-3 text-sm rounded-lg outline-none sm:mt-0 lg:mx-0 mx-auto"
-        >
-          <option value="">All</option>
-          {/* Iterate over the unique list of clothing types */}
-          {uniqueTypes.map((type) => (
-            <option key={type} value={type}>
-              {type}
-            </option>
-          ))}
-        </select>
+      <div className="relative lg:flex lg:items-center lg:justify-center">
+        <div className="text-center">
+          <p className="mx-auto text-2xl font-semibold">Shop</p>
+        </div>
+        <div className="flex justify-center mt-3 lg:absolute lg:right-0 lg:mt-0">
+          <select
+            onChange={(e) => setSelectedType(e.target.value)}
+            value={selectedType}
+            className="bg-neutral-900 text-gray-300 px-6 py-3 text-sm rounded-lg outline-none sm:mt-0 sm:w-full"
+          >
+            <option value="">All</option>
+            {/* Iterate over the unique list of clothing types */}
+            {uniqueTypes.map((type) => (
+              <option key={type} value={type}>
+                {type}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
-      <div className="text-center">
-        <p className="mx-auto text-2xl font-semibold ">Shop</p>
-      </div>
+
       <div className="flex flex-wrap justify-center">
         <ClothesEle
           clothes={filteredClothes}
