@@ -28,25 +28,28 @@ const MostPopular = () => {
   }, [selectedType]);
 
   return (
-    <div className="p-10 mt-10">
-      <div className="flex float-right">
-        <select
-          onChange={(e) => setSelectedType(e.target.value)}
-          value={selectedType}
-          className="bg-neutral-900 text-gray-300 px-6 py-3 text-sm rounded-lg outline-none sm:mt-0 "
-        >
-          <option value="">All</option>
-          {/* Iterate over the unique list of clothing types */}
-          {uniqueTypes.map((type) => (
-            <option key={type} value={type}>
-              {type}
-            </option>
-          ))}
-        </select>
+    <div className="p-0 mt-0 ">
+      <div className="flex flex-col">
+        <p className="text-2xl font-bold text-center mx-auto justify-center pb-2">
+          Most Popular
+        </p>
+        <div className="relative lg:block flex lg:mx-0 mx-auto">
+          <select
+            onChange={(e) => setSelectedType(e.target.value)}
+            value={selectedType}
+            className="bg-neutral-900 text-gray-300 px-6 py-3 text-sm rounded-lg outline-none sm:mt-0 float-right"
+          >
+            <option value="">All</option>
+            {/* Iterate over the unique list of clothing types */}
+            {uniqueTypes.map((type) => (
+              <option key={type} value={type}>
+                {type}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
-      <div className="text-center">
-        <p className="mx-auto text-2xl font-semibold">Best Sellers</p>
-      </div>
+
       <div className="flex flex-wrap justify-center">
         <ClothesEle
           clothes={filteredClothes}

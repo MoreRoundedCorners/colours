@@ -29,11 +29,11 @@ const Shop = () => {
 
   return (
     <div className="p-10">
-      <div className="flex float-right">
+      <div className="flex lg:float-right">
         <select
           onChange={(e) => setSelectedType(e.target.value)}
           value={selectedType}
-          className="bg-neutral-900 text-gray-300 px-6 py-3 text-sm rounded-lg outline-none sm:mt-0 "
+          className="bg-neutral-900 text-gray-300 px-6 py-3 text-sm rounded-lg outline-none sm:mt-0 lg:mx-0 mx-auto"
         >
           <option value="">All</option>
           {/* Iterate over the unique list of clothing types */}
@@ -45,7 +45,7 @@ const Shop = () => {
         </select>
       </div>
       <div className="text-center">
-        <p className="mx-auto text-2xl font-semibold">Shop</p>
+        <p className="mx-auto text-2xl font-semibold ">Shop</p>
       </div>
       <div className="flex flex-wrap justify-center">
         <ClothesEle

@@ -8,8 +8,9 @@ import Shop from "./components/Shop";
 import { EachClothe } from "./components/EachClothe";
 import { Blog } from "./components/Blog";
 import Cart from "./components/Cart";
+import Checkout from "./components/Checkout";
 
-function App() {
+function App({ counter }) {
   return (
     <BrowserRouter>
       <Nav />
@@ -18,7 +19,8 @@ function App() {
         <Route path="/eachClothe" element={<EachClothe />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/blog" element={<Blog />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/cart" element={<Cart counter={counter} />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
     </BrowserRouter>
   );

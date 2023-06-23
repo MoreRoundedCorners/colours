@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Navbar, Button, Link, Text, useTheme } from "@nextui-org/react";
+import { Navbar, Button, Text, useTheme } from "@nextui-org/react";
+import { useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 
 export const Nav = () => {
+  const navigate = useNavigate();
+  const counter = useSelector((state) => state.cart.cart.length);
+
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -28,7 +33,7 @@ export const Nav = () => {
         isScrolled ? "hidden" : ""
       }`}
     >
-      <div className="max-w-screen-xl  flex flex-wrap justify-between mx-auto p-4">
+      <div className="max-w-screen-xl flex flex-wrap lg:justify-between justify-center mx-auto p-4">
         <div
           className={`flex items-center ${
             isOpen ? "justify-center" : "justify-between "
@@ -71,49 +76,41 @@ export const Nav = () => {
           } w-full md:flex md:w-auto md:order-1 md:justify-center`}
           id="navbar-sticky"
         >
-          <ul className="flex ul-list text-black flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-transperant dark:bg-transperant  dark:border-gray-700">
-            <li>
-              <a
-                href="/"
-                className="block py-2 pl-3 pr-4  bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
-                aria-current="page"
-              >
+          <ul className="flex ul-list  text-black flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-transperant dark:bg-transperant  dark:border-gray-700">
+            <Link to="/">
+              <a className="block li-nav py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-neutral-900 dark: dark:hover:bg-gray-700 dark:hover: md:dark:hover:bg-transparent dark:border-gray-700">
                 Home
               </a>
-            </li>
-            <li>
-              <a
-                href="/shop"
-                className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark: dark:hover:bg
--gray-700 dark:hover: md:dark:hover:bg-transparent dark:border-gray-700"
-              >
+            </Link>
+
+            <Link to="/shop">
+              <a className="block li-nav py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-neutral-900 dark: dark:hover:bg-gray-700 dark:hover: md:dark:hover:bg-transparent dark:border-gray-700">
                 Shop
               </a>
-            </li>
-            <li>
-              <a
-                href="/blog"
-                className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark: dark:hover:bg-gray-700 dark:hover: md:dark:hover:bg-transparent dark:border-gray-700"
-              >
-                Blog
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark: dark:hover:bg-gray-700 dark:hover: md:dark:hover:bg-transparent dark:border-gray-700"
-              >
+            </Link>
+
+            <Link to="/contact" className="">
+              <a className="block li-nav py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-neutral-900 dark: dark:hover:bg-gray-700 dark:hover: md:dark:hover:bg-transparent dark:border-gray-700">
                 Contact
               </a>
-            </li>
-            <li auto size="small" className="mr-2">
-              <a href="/cart">
-                <img
-                  src="../../public/misImg/shop.png"
-                  className="h-auto w-6 object-cover cursor-pointer"
-                />
-              </a>
-            </li>
+            </Link>
+            <div className="flex">
+              <Link to="/cart">
+                <a>
+                  <p className="absolute pl-6 pt-[1px]">
+                    {counter > 0 ? (
+                      <p className="animate-slidedown">{counter}</p>
+                    ) : (
+                      ""
+                    )}
+                  </p>
+                  <img
+                    src="../../public/misImg/shop.png"
+                    className="h-auto w-6 object-cover cursor-pointer"
+                  />
+                </a>
+              </Link>
+            </div>
           </ul>
         </div>
       </div>

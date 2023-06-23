@@ -15,13 +15,15 @@ const FrontPage = () => {
 
   return (
     <section className="overflow-hidden">
-      <div className="relative flex group ">
-        <div className="absolute transition-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg group-hover:opacity-0 group-hover:-inset-1 group-hover:duration-200 animate-tilt"></div>
+      <div className=" flex mt-[navbar height]">
+        <div className=" transition-all duration-1000 opacity-70 bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg group-hover:opacity-0 group-hover:duration-200 animate-tilt w-[250px]"></div>
 
         <img
           src="../../public/images/osean.webp"
-          className=" object-cover w-screen h-scree mx-aut"
+          className=" object-contain flex-grow md:h-screen"
         />
+
+        <div className="absolut transition-all duration-1000 opacity-70 bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg group-hover:opacity-0 group-hover:duration-200 animate-tilt w-[250px]"></div>
       </div>
 
       <div

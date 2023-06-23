@@ -1,12 +1,48 @@
+@font-face {
+  font-family: "GothamBold";
+  src: url("/fonts/GothamBook.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: "GothamBold", sans-serif;
+}
+
 .ul-list {
   margin: auto !important;
 }
 
 .in-view {
-  /* red font */
   color: black;
 
   background-color: #ffffff;
   transition: 1s;
   padding: 20px;
+}
+
+.li-nav {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: red;
+
+  float: left;
+  position: relative;
+  padding: 10px 20px;
+  overflow: hidden;
+}
+
+.li-nav::after {
+  background-color: rgb(253, 10, 172);
+  content: "";
+  width: 0;
+  height: 3px;
+  left: 0;
+  bottom: 0;
+  transition: width 0.35s ease 0s;
+  position: absolute;
+}
+
+.li-nav:hover::after {
+  width: 100%;
 }
