@@ -11,7 +11,7 @@
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "postinstall": "npm install --legacy-peer-deps && npx typesync"
+    "postinstall": "npm install --legacy-peer-deps --force && npx typesync"
   },
   "dependencies": {
     "@material-ui/core": "^4.12.4",
