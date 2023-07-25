@@ -33,7 +33,7 @@ const Shop = () => {
         <div className="text-center">
           <p className="mx-auto text-2xl font-semibold">Shop</p>
         </div>
-        <div className="flex justify-center mt-3 lg:absolute lg:right-0 lg:mt-0">
+        <div className="flex justify-center mt-3 lg:absolute lg:right-0 lg:mt-0 ">
           <select
             onChange={(e) => setSelectedType(e.target.value)}
             value={selectedType}
@@ -50,7 +50,7 @@ const Shop = () => {
         </div>
       </div>
 
-      <div className="flex flex-wrap justify-center">
+      <div className="flex flex-wrap justify-center animate-slideup">
         <ClothesEle
           clothes={filteredClothes}
           setSelectedClothe={setSelectedClothe}
