@@ -15,6 +15,10 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+app.get("/", (req, res) => {
+  res.send("Server is running...");
+});
+
 app.post("/charge", async (req, res) => {
   console.log("req.body: ", req.body);
   try {
