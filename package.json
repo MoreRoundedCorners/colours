@@ -10,6 +10,7 @@
     "start:front": "vite",
     "start:back": "node backend/server.js",
     "start": "concurrently \"npm run start:front\" \"npm run start:back\"",
+    "build": "vite build",
     "heroku-postbuild": "npm run build"
   },
   "dependencies": {
